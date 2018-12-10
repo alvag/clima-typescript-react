@@ -14,8 +14,8 @@ class Form extends Component<IProps> {
     public search = (e: FormEvent) => {
         e.preventDefault();
 
-        const city = this.city.current!.value;
-        const country = this.country.current!.value;
+        const city = this.city.current!.value.trim();
+        const country = this.country.current!.value.trim();
 
         const params: IWeatherParams = { city, country };
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import './Header.css';
 
-export interface IHeader {
+export interface IProps {
     title: string;
 }
 
-const Header = (props: IHeader) => {
+const Header = (props: IProps) => {
     return (
         <div>
             <nav>

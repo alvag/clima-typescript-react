@@ -1,4 +1,4 @@
 export interface IWeatherParams {
-    city: string;
-    country: string;
+    city?: string;
+    country?: string;
 }
