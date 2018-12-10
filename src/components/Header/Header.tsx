@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 
-interface IHeader {
+export interface IHeader {
     title: string;
 }
 
