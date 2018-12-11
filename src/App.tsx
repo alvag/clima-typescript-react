@@ -8,13 +8,15 @@ import Utils from './Utils/Utils';
 interface IAppState {
     params: IWeatherParams;
     paramsError: boolean;
+    weatherData: any;
 }
 
 class App extends Component<{}, IAppState> {
 
     public state: IAppState = {
         params: {},
-        paramsError: false
+        paramsError: false,
+        weatherData: {}
     };
 
     public render() {
@@ -41,7 +43,13 @@ class App extends Component<{}, IAppState> {
     private requestApi = (params: IWeatherParams) => {
         const url = Utils.getUrl(params);
 
-        console.log(url);
+        fetch(url).then((response) => {
+            return response.json();
+        }).then((weatherData) => {
+            this.setState({ weatherData });
+        }).catch((error) => {
+            console.log(error);
+        });
 
     }
 
