@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Error from './components/Error';
 import Form from './components/Form';
 import Header from './components/Header/';
+import Weather from './components/Weather/';
 import { IWeatherParams } from './interfaces';
 import Utils from './Utils/Utils';
 
@@ -54,8 +55,14 @@ class App extends Component<{}, IAppState> {
     }
 
     private conditionalComponent(hasError: boolean) {
+        const { cod } = this.state.weatherData;
+
         if (hasError) {
             return <Error message="Ambos campos son obligatorios" />;
+        } else if (cod === '404') {
+            return <Error message="Ciudad no encontrada" />;
+        } else {
+            return <Weather weatherData={this.state.weatherData} />;
         }
     }
 }

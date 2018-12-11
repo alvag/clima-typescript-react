@@ -1,7 +1,7 @@
 import React from 'react';
 import './Error.css';
 
-export interface IProps {
+interface IProps {
     message: string;
 }
 

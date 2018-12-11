@@ -1,0 +1,14 @@
+.resultado {
+  margin-top: 3rem;
+}
+.resultado h2 {
+  font-size: 1.6rem;
+  text-align: center;
+}
+.resultado p {
+  text-align: center;
+  font-size: 1.4rem;
+}
+.resultado .temperatura {
+  font-size: 1.8rem;
+}
